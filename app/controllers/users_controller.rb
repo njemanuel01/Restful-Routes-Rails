@@ -22,6 +22,15 @@ class UsersController < ApplicationController
     @user = User.find(params["id"])
   end
   
+  def delete_form_do
+    @user = User.find(params["id"])
+    if @user
+      redirect_to "/users"
+    else
+      render :"users/delete_form"
+    end
+  end
+  
   def single
     @user = User.find(params["id"])
   end
