@@ -1,0 +1,3 @@
+<% @stories.each do |story| %>
+  <p><%= story.name %>  <a href="/users/<%= @user.id %>/stories/<%= story.id %>/delete">Delete Story?</a>  <a href="users/<%= @user.id %>/stories/<%= story.id %>/edit">Edit Story?</a></p>
+<% end %>

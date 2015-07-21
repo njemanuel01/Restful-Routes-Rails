@@ -1,0 +1,11 @@
+<ul>
+  <% @user.errors.full_messages.each do |error| %>
+    <li><%= error %></li>
+  <% end %>
+</ul>
+
+<%= form_tag("/users/#{@user.id}/stories/#{@story.id}", method: "put") do %>
+  <input type="text" placeholder="New Story Name" name="stories[name]" value="<%=@story.name%>"></input>
+  <input type="hidden" name="stories[user_id]" value="<%= @user.id %>"></input>
+  <input type="submit"></input>
+<% end %>

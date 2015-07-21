@@ -1,5 +1,4 @@
 <p>Are you sure you want to delete <%=@user.email%>? Click submit.</p>
 <%= form_tag("/users/#{@user.id}", method: "delete") do %>
-  <input type="hidden" name="_method" value="delete"></input>
   <input type="submit"></input>
 <% end %>

@@ -15,7 +15,7 @@ Rails.application.routes.draw do
   get "/users/:user_id/stories/new" => 'stories#new_form'
   post "/users/:user_id/stories" => 'stories#new_form_do'
   get "/users/:user_id/stories/:story_id/delete" => 'stories#delete_form'
-  delete "/users/:user_id/stories" => 'stories#delete_form_do'
+  delete "/users/:user_id/stories/:story_id" => 'stories#delete_form_do'
   get "/users/:user_id/stories/:story_id/edit" => 'stories#edit_form'
   put "/users/:user_id/stories/:story_id" => 'stories#edit_form_do'
   get "users/:user_id/stories/:story_id" => 'stories#single'

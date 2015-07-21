@@ -1,0 +1,4 @@
+<p>Are you sure you want to delete <%=@story.name%>? Click submit.</p>
+<%= form_tag("/users/#{@user.id}/stories/#{@story.id}", method: "delete") do %>
+  <input type="submit"></input>
+<% end %>
