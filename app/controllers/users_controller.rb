@@ -36,11 +36,11 @@ class UsersController < ApplicationController
   end
   
   def delete_form
-    @user = User.find(params["id"])
+    check_user
   end
   
   def delete_form_do
-    @user = User.find(params["id"])
+    check_user
     if @user.delete
       redirect_to "/users"
     else
@@ -49,11 +49,11 @@ class UsersController < ApplicationController
   end
   
   def edit_form
-    @user = User.find(params["id"])
+    check_user
   end
   
   def edit_form_do
-    @user = User.find(params["id"])
+    check_user
     if @user.update(params["users"].permit(:email, :password))
       redirect_to "/users/#{@user.id}"
     else
