@@ -31,6 +31,14 @@ class UsersController < ApplicationController
     end
   end
   
+  def edit_form
+    @user = User.find(params["id"])
+  end
+  
+  def edit_form_do
+    @user = User.find(parms["id"])
+  end
+  
   def single
     @user = User.find(params["id"])
   end

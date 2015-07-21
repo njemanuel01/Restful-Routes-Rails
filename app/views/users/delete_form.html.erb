@@ -1,6 +1,5 @@
 <p>Are you sure you want to delete <%=@user.email%>? Click submit.</p>
-<form action="/users/<%= @user.id %>" method="post">
-  <input name="authenticity_token" type="hidden" value="<%= form_authenticity_token %>">
+<%= form_tag("/users/#{@user.id}", method: "delete") do %>
   <input type="hidden" name="_method" value="delete"></input>
   <input type="submit"></input>
-</form>
+<% end %>
