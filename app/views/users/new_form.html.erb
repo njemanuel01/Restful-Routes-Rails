@@ -5,7 +5,7 @@
 </ul>
 
 <form action="/users" method="post">
-  <input name="authenticity_token" type="hidden" value="token_value">
+  <input name="authenticity_token" type="hidden" value="<%= form_authenticity_token %>">
   <input type="text" placeholder="New Email" name="users[email]" value="<%=@user.email%>"></input>
   <input type="password" placeholder="New Password" name="users[password]"></input>
   <input type="submit"></input>

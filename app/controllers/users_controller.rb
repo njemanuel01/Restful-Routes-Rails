@@ -24,7 +24,7 @@ class UsersController < ApplicationController
   
   def delete_form_do
     @user = User.find(params["id"])
-    if @user
+    if @user.delete
       redirect_to "/users"
     else
       render :"users/delete_form"

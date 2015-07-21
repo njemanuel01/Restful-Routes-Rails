@@ -5,6 +5,8 @@ Rails.application.routes.draw do
   post "/users" => 'users#new_form_do'
   get "/users/:id/delete" => 'users#delete_form'
   delete "/users/:id" => 'users#delete_form_do'
+  get "/users/:id/edit" => 'users#edit_form'
+  put "/users/:id" => 'users#edit_form_do'
   get "users/:id" => 'users#single'
   
   
