@@ -7,6 +7,7 @@ class User < ActiveRecord::Base
   
   def valid_password?(password)
     if !(BCrypt::Password.new(self.password) == password)
+      binding.pry
       errors.messages["login"] = "Login Failed."
     end
     return errors.messages.empty?

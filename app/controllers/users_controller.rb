@@ -7,10 +7,11 @@ class UsersController < ApplicationController
   
   def check_login
     @user = User.where("email" => params["users"]["email"]).first
-    if !@user.nil? && @user.valid_password?(params["users"]["password"])
+    if !@user.nil? && @user.valid_password?(params["users"].permit("password"))
       session[:id] = @user.id
       redirect_to "/users/#{@user.id}"
     else
+      binding.pry
       render :"users/login"
     end
   end
@@ -24,9 +25,9 @@ class UsersController < ApplicationController
   end
   
   def new_form_do
-    params["users"]["password"] = BCrypt::Password.create(params["users"]["password"])
-    @user = User.new(params["users"])
+    @user = User.new(params["users"].permit(:email, :password))
     if @user.valid?
+      @user.password = BCrypt::Password.create(params["users"].permit(:password))
       @user.save
       session[:id] = @user.id
       redirect_to "/users/#{@user.id}"
