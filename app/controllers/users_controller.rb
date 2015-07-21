@@ -34,10 +34,8 @@ class UsersController < ApplicationController
   end
   
   def edit_form_do
-    user_params = params.require(:users).permit(:email, :password)
-    
     @user = User.find(params["id"])
-    if @user.update(user_params)
+    if @user.update(params["users"].permit(:email, :password))
       redirect_to "/users/#{@user.id}"
     else
       render :"users/edit_form"
