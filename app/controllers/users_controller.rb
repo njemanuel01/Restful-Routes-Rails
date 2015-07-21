@@ -39,10 +39,10 @@ class UsersController < ApplicationController
     user_params = params.require(:users).permit(:email, :password)
     
     @user = User.find(params["id"])
-    if @user.update(params["users"])
-      redirect "/users/#{@user.id}"
+    if @user.update(user_params)
+      redirect_to "/users/#{@user.id}"
     else
-      erb :"users/edit_form"
+      render :"users/edit_form"
     end
   end
   
