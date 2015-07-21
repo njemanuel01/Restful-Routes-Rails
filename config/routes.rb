@@ -11,14 +11,14 @@ Rails.application.routes.draw do
   get "users/:id" => 'users#single'
   
   # Story routes
-  get "/users/:id/stories" => 'stories#list'
-  get "/users/:id/stories/new" => 'stories#new_form'
-  post "/users/:id/stories" => 'stories#new_form_do'
-  get "/users/:id/stories/delete" => 'stories#delete_form'
-  delete "/users/:id/stories" => 'stories#delete_form_do'
-  get "/users/:id/stories/edit" => 'stories#edit_form'
-  put "/users/:id/stories/:id" => 'stories#edit_form_do'
-  get "users/:id/stories/:id" => 'stories#single'
+  get "/users/:user_id/stories" => 'stories#list'
+  get "/users/:user_id/stories/new" => 'stories#new_form'
+  post "/users/:user_id/stories" => 'stories#new_form_do'
+  get "/users/:user_id/stories/:story_id/delete" => 'stories#delete_form'
+  delete "/users/:user_id/stories" => 'stories#delete_form_do'
+  get "/users/:user_id/stories/:story_id/edit" => 'stories#edit_form'
+  put "/users/:user_id/stories/:story_id" => 'stories#edit_form_do'
+  get "users/:user_id/stories/:story_id" => 'stories#single'
   
   # The priority is based upon order of creation: first created -> highest priority.
   # See how all your routes lay out with "rake routes".
