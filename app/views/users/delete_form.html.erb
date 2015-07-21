@@ -1,0 +1,5 @@
+<p>Are you sure you want to delete <%=@user.email%>? Click submit.</p>
+<form action="/users/<%= @user.id %>" method="post">
+  <input type="hidden" name="_method" value="delete"></input>
+  <input type="submit"></input>
+</form>

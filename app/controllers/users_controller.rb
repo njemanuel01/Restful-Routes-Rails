@@ -18,6 +18,10 @@ class UsersController < ApplicationController
     end
   end
   
+  def delete_form
+    @user = User.find(params["id"])
+  end
+  
   def single
     @user = User.find(params["id"])
   end
