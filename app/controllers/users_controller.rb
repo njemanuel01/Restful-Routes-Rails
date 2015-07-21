@@ -8,9 +8,7 @@ class UsersController < ApplicationController
   end
   
   def new_form_do
-    user_params = params.require(:users).permit(:email, :password)
-    
-    @user = User.new(user_params)
+    @user = User.new(params["users"].permit(:email, :password))
     if @user.save
       redirect_to "/users/#{@user.id}"
     else

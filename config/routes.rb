@@ -1,5 +1,6 @@
 Rails.application.routes.draw do
   
+  # User routes
   get "/users" => 'users#list'
   get "/users/new" => 'users#new_form'
   post "/users" => 'users#new_form_do'
@@ -8,6 +9,8 @@ Rails.application.routes.draw do
   get "/users/:id/edit" => 'users#edit_form'
   put "/users/:id" => 'users#edit_form_do'
   get "users/:id" => 'users#single'
+  
+  # Story routes
   
   
   # The priority is based upon order of creation: first created -> highest priority.
