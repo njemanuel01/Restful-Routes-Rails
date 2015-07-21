@@ -3,6 +3,8 @@ Rails.application.routes.draw do
   get "/users" => 'users#list'
   get "/users/new" => 'users#new_form'
   post "/users" => 'users#new_form_do'
+  
+  get "users/:id" => 'users#single'
   # The priority is based upon order of creation: first created -> highest priority.
   # See how all your routes lay out with "rake routes".
 
