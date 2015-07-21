@@ -36,7 +36,14 @@ class UsersController < ApplicationController
   end
   
   def edit_form_do
-    @user = User.find(parms["id"])
+    user_params = params.require(:users).permit(:email, :password)
+    
+    @user = User.find(params["id"])
+    if @user.update(params["users"])
+      redirect "/users/#{@user.id}"
+    else
+      erb :"users/edit_form"
+    end
   end
   
   def single
