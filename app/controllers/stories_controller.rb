@@ -40,7 +40,7 @@ class StoriesController < ApplicationController
   end
   
   def edit_form_do
-    @user = User.find(params["id"])
+    @user = User.find(params["user_id"])
     @story = Story.find(params["story_id"])
     if @story.update(params["stories"].permit(:name, :user_id))
       redirect_to "/users/#{@user.id}/stories/#{@story.id}"
