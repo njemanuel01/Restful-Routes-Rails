@@ -6,6 +6,7 @@ class StoriesController < ApplicationController
   
   def new_form
     @user = User.find(params["user_id"])
+    @story = Story.new
   end
   
   def new_form_do
@@ -49,7 +50,7 @@ class StoriesController < ApplicationController
   end
   
   def single
-    @user = User.find(params["id"])
-    @story = Story.find(params["id"])
+    @user = User.find(params["user_id"])
+    @story = Story.find(params["story_id"])
   end
 end
